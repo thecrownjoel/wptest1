@@ -9,14 +9,17 @@
 <body>
 
   <header id="masthead">
-    <h1><a href="#">PHP for WordPress</a></h1>
+    <h1><a href="<?php echo get_home_url(); ?>">PHP for WordPress</a></h1>
   </header>
 
   <div id="content">
 
+<!-- Start of the WordPress loop -->
+
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
      <h1><?php the_title(); ?></h1>
+     
      <?php the_content(); ?>
 
     <?php endwhile; else: ?>
